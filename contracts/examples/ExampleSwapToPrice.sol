@@ -21,9 +21,9 @@ contract ExampleSwapToPrice {
         router = router_;
     }
 
-    // swaps an amount of either token such that the trade is profit-maximizing, given an external true price
-    // true price is expressed in the ratio of token A to token B
-    // caller must approve this contract to spend whichever token is intended to be swapped
+    // 兑换一定数量的任一 token，使得在给定外部真实价格的情况下该交易的利润最大化
+    // 真实价格以 token A 与 token B 的比率表示
+    // 调用者必须授权（approve）本合约花费其打算兑换的那个 token
     function swapToPrice(
         address tokenA,
         address tokenB,
@@ -34,9 +34,9 @@ contract ExampleSwapToPrice {
         address to,
         uint256 deadline
     ) public {
-        // true price is expressed as a ratio, so both values must be non-zero
+        // 真实价格以比率表示，因此两个值都必须非零
         require(truePriceTokenA != 0 && truePriceTokenB != 0, "ExampleSwapToPrice: ZERO_PRICE");
-        // caller can specify 0 for either if they wish to swap in only one direction, but not both
+        // 如果调用者只想单向兑换，可以将其中任意一个指定为 0，但不能两个都为 0
         require(maxSpendTokenA != 0 || maxSpendTokenB != 0, "ExampleSwapToPrice: ZERO_SPEND");
 
         bool aToB;
@@ -51,7 +51,7 @@ contract ExampleSwapToPrice {
 
         require(amountIn > 0, 'ExampleSwapToPrice: ZERO_AMOUNT_IN');
 
-        // spend up to the allowance of the token in
+        // 最多花费输入 token（token in）的允许额度
         uint256 maxSpend = aToB ? maxSpendTokenA : maxSpendTokenB;
         if (amountIn > maxSpend) {
             amountIn = maxSpend;
@@ -68,7 +68,7 @@ contract ExampleSwapToPrice {
 
         router.swapExactTokensForTokens(
             amountIn,
-            0, // amountOutMin: we can skip computing this number because the math is tested
+            0, // amountOutMin：由于数学计算已经过测试，这里可以跳过计算该数值
             path,
             to,
             deadline

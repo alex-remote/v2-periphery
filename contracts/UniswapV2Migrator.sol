@@ -17,8 +17,8 @@ contract UniswapV2Migrator is IUniswapV2Migrator {
         router = IUniswapV2Router01(_router);
     }
 
-    // needs to accept ETH from any v1 exchange and the router. ideally this could be enforced, as in the router,
-    // but it's not possible because it requires a call to the v1 factory, which takes too much gas
+    // 需要接受来自任意 v1 exchange 以及 router 的 ETH。理想情况下，这一点本可以像 router 中那样强制校验，
+    // 但这无法实现，因为校验需要调用 v1 factory，会消耗过多 gas
     receive() external payable {}
 
     function migrate(address token, uint amountTokenMin, uint amountETHMin, address to, uint deadline)
@@ -39,10 +39,10 @@ contract UniswapV2Migrator is IUniswapV2Migrator {
             deadline
         );
         if (amountTokenV1 > amountTokenV2) {
-            TransferHelper.safeApprove(token, address(router), 0); // be a good blockchain citizen, reset allowance to 0
+            TransferHelper.safeApprove(token, address(router), 0); // 做个良好的区块链公民，将授权额度（allowance）重置为 0
             TransferHelper.safeTransfer(token, msg.sender, amountTokenV1 - amountTokenV2);
         } else if (amountETHV1 > amountETHV2) {
-            // addLiquidityETH guarantees that all of amountETHV1 or amountTokenV1 will be used, hence this else is safe
+            // addLiquidityETH 保证 amountETHV1 或 amountTokenV1 两者之一会被全部用完，因此这个 else 分支是安全的
             TransferHelper.safeTransferETH(msg.sender, amountETHV1 - amountETHV2);
         }
     }

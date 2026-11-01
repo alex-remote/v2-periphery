@@ -25,35 +25,35 @@
 
 | 状态 | 文件 | 行数 | 子代理 | 翻译后行数 |
 | --- | --- | ---: | --- | ---: |
-| [ ] | `contracts/UniswapV2Router01.sol` | 280 | #01 | |
-| [ ] | `contracts/UniswapV2Migrator.sol` | 49 | #01 | |
-| [ ] | `contracts/UniswapV2Router02.sol` | 446 | #02 | |
-| [ ] | `contracts/examples/ExampleFlashSwap.sol` | 67 | #03 | |
-| [ ] | `contracts/examples/ExampleComputeLiquidityValue.sol` | 90 | #03 | |
+| [x] | `contracts/UniswapV2Router01.sol` | 280 | #01 | 280 |
+| [x] | `contracts/UniswapV2Migrator.sol` | 49 | #01 | 49 |
+| [x] | `contracts/UniswapV2Router02.sol` | 446 | #02 | 446 |
+| [x] | `contracts/examples/ExampleFlashSwap.sol` | 67 | #03 | 67 |
+| [x] | `contracts/examples/ExampleComputeLiquidityValue.sol` | 90 | #03 | 90 |
 | [ ] | `contracts/examples/ExampleSlidingWindowOracle.sol` | 125 | #04 | |
-| [ ] | `contracts/examples/ExampleOracleSimple.sol` | 67 | #05 | |
-| [ ] | `contracts/examples/ExampleSwapToPrice.sol` | 77 | #05 | |
+| [x] | `contracts/examples/ExampleOracleSimple.sol` | 67 | #05 | 67 |
+| [x] | `contracts/examples/ExampleSwapToPrice.sol` | 77 | #05 | 77 |
 | [ ] | `contracts/libraries/UniswapV2LiquidityMathLibrary.sol` | 139 | #06 | |
 | [ ] | `contracts/libraries/SafeMath.sol` | 17 | #06 | |
-| [ ] | `contracts/libraries/UniswapV2Library.sol` | 82 | #07 | |
-| [ ] | `contracts/libraries/UniswapV2OracleLibrary.sol` | 35 | #07 | |
-| [ ] | `contracts/test/DeflatingERC20.sol` | 97 | #08 | |
-| [ ] | `contracts/test/ERC20.sol` | 94 | #08 | |
-| [ ] | `.github/stale.yml` | 25 | #08 | |
-| [ ] | `.github/workflows/CI.yml` | 38 | #08 | |
+| [x] | `contracts/libraries/UniswapV2Library.sol` | 82 | #07 | 82 |
+| [x] | `contracts/libraries/UniswapV2OracleLibrary.sol` | 35 | #07 | 35 |
+| [x] | `contracts/test/DeflatingERC20.sol` | 97 | #08 | 97 |
+| [x] | `contracts/test/ERC20.sol` | 94 | #08 | 94 |
+| [x] | `.github/stale.yml` | 25 | #08 | 25 |
+| [x] | `.github/workflows/CI.yml` | 38 | #08 | 38 |
 | [ ] | `contracts/test/WETH9.sol`（第 1–310 行） | 756 | #09 | |
 | [ ] | `contracts/test/WETH9.sol`（第 311–540 行） | 〃 | #10 | |
 | [ ] | `contracts/test/WETH9.sol`（第 541–756 行） | 〃 | #11 | |
-| [ ] | `test/ExampleComputeLiquidityValue.spec.ts` | 454 | #12 | |
-| [ ] | `test/ExampleSwapToPrice.spec.ts` | 198 | #12 | |
-| [ ] | `test/ExampleFlashSwap.spec.ts` | 153 | #13 | |
-| [ ] | `test/UniswapV2Migrator.spec.ts` | 70 | #13 | |
+| [x] | `test/ExampleComputeLiquidityValue.spec.ts` | 454 | #12 | 454 |
+| [x] | `test/ExampleSwapToPrice.spec.ts` | 198 | #12 | 198 |
+| [x] | `test/ExampleFlashSwap.spec.ts` | 153 | #13 | 153 |
+| [x] | `test/UniswapV2Migrator.spec.ts` | 70 | #13 | 70 |
 | [ ] | `test/ExampleSlidingWindowOracle.spec.ts` | 294 | #14 | |
-| [ ] | `test/UniswapV2Router01.spec.ts` | 734 | #15 | |
-| [ ] | `test/UniswapV2Router02.spec.ts` | 380 | #15 | |
-| [ ] | `test/shared/fixtures.ts` | 100 | #15 | |
-| [ ] | `README.md` → `README_zh.md` | 24 | #16 | |
-| [ ] | `contracts/examples/README.md` → `contracts/examples/README_zh.md` | 14 | #16 | |
+| [x] | `test/UniswapV2Router01.spec.ts` | 734 | #15 | 734 |
+| [x] | `test/UniswapV2Router02.spec.ts` | 380 | #15 | 380 |
+| [x] | `test/shared/fixtures.ts` | 100 | #15 | 100 |
+| [x] | `README.md` → `README_zh.md` | 24 | #16 | 24 |
+| [x] | `contracts/examples/README.md` → `contracts/examples/README_zh.md` | 14 | #16 | 14 |
 
 ## 无需翻译的文件
 
@@ -85,3 +85,13 @@
 ## 进度日志
 
 - 2026-11-01：完成文件统计，创建本跟踪文档；分派 16 个子代理并行翻译。
+- 子代理 #12 完成：test/ExampleComputeLiquidityValue.spec.ts=454，test/ExampleSwapToPrice.spec.ts=198
+- 子代理 #16 完成：README_zh.md=24，contracts/examples/README_zh.md=14；原 README.md 未改动
+- 子代理 #02 完成：contracts/UniswapV2Router02.sol=446
+- 子代理 #15 完成：test/UniswapV2Router01.spec.ts=734，test/UniswapV2Router02.spec.ts=380，test/shared/fixtures.ts=100
+- 子代理 #08 完成：contracts/test/DeflatingERC20.sol=97，contracts/test/ERC20.sol=94，.github/stale.yml=25，.github/workflows/CI.yml=38；ERC20/DeflatingERC20 仅含 keccak256 代码片段注释、CI.yml 仅含 `# v1` 版本标注，均保持原样；stale.yml 译 7 行
+- 子代理 #01 完成：contracts/UniswapV2Router01.sol=280，contracts/UniswapV2Migrator.sol=49
+- 子代理 #03 完成：contracts/examples/ExampleFlashSwap.sol=67，contracts/examples/ExampleComputeLiquidityValue.sol=90
+- 子代理 #07 完成：contracts/libraries/UniswapV2Library.sol=82，contracts/libraries/UniswapV2OracleLibrary.sol=35
+- 子代理 #05 完成：contracts/examples/ExampleOracleSimple.sol=67，contracts/examples/ExampleSwapToPrice.sol=77
+- 子代理 #13 完成：test/ExampleFlashSwap.spec.ts=153，test/UniswapV2Migrator.spec.ts=70
