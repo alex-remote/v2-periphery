@@ -8,10 +8,10 @@ import '../libraries/SafeMath.sol';
 import '../libraries/UniswapV2Library.sol';
 import '../libraries/UniswapV2OracleLibrary.sol';
 
-// sliding window oracle that uses observations collected over a window to provide moving price averages in the past
-// `windowSize` with a precision of `windowSize / granularity`
-// note this is a singleton oracle and only needs to be deployed once per desired parameters, which
-// differs from the simple oracle which must be deployed once per pair.
+// 滑动窗口 oracle：利用在一个窗口内收集的多个 observation，提供过去
+// `windowSize` 时间内的移动平均价格，精度为 `windowSize / granularity`
+// 注意：这是一个单例 oracle，每组所需参数只需部署一次，这一点
+// 与简单版 oracle 不同，后者必须为每个 pair 各部署一次。
 contract ExampleSlidingWindowOracle {
     using FixedPoint for *;
     using SafeMath for uint;
@@ -23,20 +23,20 @@ contract ExampleSlidingWindowOracle {
     }
 
     address public immutable factory;
-    // the desired amount of time over which the moving average should be computed, e.g. 24 hours
+    // 计算移动平均所覆盖的期望时长，例如 24 小时
     uint public immutable windowSize;
-    // the number of observations stored for each pair, i.e. how many price observations are stored for the window.
-    // as granularity increases from 1, more frequent updates are needed, but moving averages become more precise.
-    // averages are computed over intervals with sizes in the range:
+    // 每个 pair 存储的 observation 数量，即该窗口内存储多少个价格 observation。
+    // granularity 从 1 开始增大时，需要更频繁地更新，但移动平均也会更精确。
+    // 计算平均值所用区间的长度落在以下范围内：
     //   [windowSize - (windowSize / granularity) * 2, windowSize]
-    // e.g. if the window size is 24 hours, and the granularity is 24, the oracle will return the average price for
-    //   the period:
+    // 例如，若窗口大小为 24 小时、granularity 为 24，则 oracle 将返回以下时间段内的
+    //   平均价格：
     //   [now - [22 hours, 24 hours], now]
     uint8 public immutable granularity;
-    // this is redundant with granularity and windowSize, but stored for gas savings & informational purposes.
+    // 该值可由 granularity 和 windowSize 推出，属于冗余，但为了节省 gas 并便于查询而存储。
     uint public immutable periodSize;
 
-    // mapping from pair address to a list of price observations of that pair
+    // 从 pair 地址映射到该 pair 的价格 observation 列表
     mapping(address => Observation[]) public pairObservations;
 
     constructor(address factory_, uint windowSize_, uint8 granularity_) public {
@@ -50,35 +50,35 @@ contract ExampleSlidingWindowOracle {
         granularity = granularity_;
     }
 
-    // returns the index of the observation corresponding to the given timestamp
+    // 返回给定时间戳所对应的 observation 的索引
     function observationIndexOf(uint timestamp) public view returns (uint8 index) {
         uint epochPeriod = timestamp / periodSize;
         return uint8(epochPeriod % granularity);
     }
 
-    // returns the observation from the oldest epoch (at the beginning of the window) relative to the current time
+    // 返回相对于当前时间而言最早的 epoch（即窗口起始处）的 observation
     function getFirstObservationInWindow(address pair) private view returns (Observation storage firstObservation) {
         uint8 observationIndex = observationIndexOf(block.timestamp);
-        // no overflow issue. if observationIndex + 1 overflows, result is still zero.
+        // 不存在溢出问题。即使 observationIndex + 1 溢出，结果仍为零。
         uint8 firstObservationIndex = (observationIndex + 1) % granularity;
         firstObservation = pairObservations[pair][firstObservationIndex];
     }
 
-    // update the cumulative price for the observation at the current timestamp. each observation is updated at most
-    // once per epoch period.
+    // 更新当前时间戳所对应 observation 的 cumulative price。每个 observation 在每个 epoch 周期内
+    // 最多更新一次。
     function update(address tokenA, address tokenB) external {
         address pair = UniswapV2Library.pairFor(factory, tokenA, tokenB);
 
-        // populate the array with empty observations (first call only)
+        // 用空的 observation 填充数组（仅首次调用时）
         for (uint i = pairObservations[pair].length; i < granularity; i++) {
             pairObservations[pair].push();
         }
 
-        // get the observation for the current period
+        // 获取当前周期对应的 observation
         uint8 observationIndex = observationIndexOf(block.timestamp);
         Observation storage observation = pairObservations[pair][observationIndex];
 
-        // we only want to commit updates once per period (i.e. windowSize / granularity)
+        // 每个周期（即 windowSize / granularity）只提交一次更新
         uint timeElapsed = block.timestamp - observation.timestamp;
         if (timeElapsed > periodSize) {
             (uint price0Cumulative, uint price1Cumulative,) = UniswapV2OracleLibrary.currentCumulativePrices(pair);
@@ -88,29 +88,29 @@ contract ExampleSlidingWindowOracle {
         }
     }
 
-    // given the cumulative prices of the start and end of a period, and the length of the period, compute the average
-    // price in terms of how much amount out is received for the amount in
+    // 给定某个时间段起点和终点的 cumulative price 以及该时间段的长度，计算平均
+    // 价格，结果以给定输入数量（amount in）可换得的输出数量（amount out）来表示
     function computeAmountOut(
         uint priceCumulativeStart, uint priceCumulativeEnd,
         uint timeElapsed, uint amountIn
     ) private pure returns (uint amountOut) {
-        // overflow is desired.
+        // 此处溢出是有意为之的。
         FixedPoint.uq112x112 memory priceAverage = FixedPoint.uq112x112(
             uint224((priceCumulativeEnd - priceCumulativeStart) / timeElapsed)
         );
         amountOut = priceAverage.mul(amountIn).decode144();
     }
 
-    // returns the amount out corresponding to the amount in for a given token using the moving average over the time
-    // range [now - [windowSize, windowSize - periodSize * 2], now]
-    // update must have been called for the bucket corresponding to timestamp `now - windowSize`
+    // 对给定 token，基于以下时间范围内的移动平均，返回输入数量（amount in）对应的输出数量（amount out），时间
+    // 范围为 [now - [windowSize, windowSize - periodSize * 2], now]
+    // 调用前必须已针对时间戳 `now - windowSize` 所对应的 bucket 调用过 update
     function consult(address tokenIn, uint amountIn, address tokenOut) external view returns (uint amountOut) {
         address pair = UniswapV2Library.pairFor(factory, tokenIn, tokenOut);
         Observation storage firstObservation = getFirstObservationInWindow(pair);
 
         uint timeElapsed = block.timestamp - firstObservation.timestamp;
         require(timeElapsed <= windowSize, 'SlidingWindowOracle: MISSING_HISTORICAL_OBSERVATION');
-        // should never happen.
+        // 理论上永远不会发生。
         require(timeElapsed >= windowSize - periodSize * 2, 'SlidingWindowOracle: UNEXPECTED_TIME_ELAPSED');
 
         (uint price0Cumulative, uint price1Cumulative,) = UniswapV2OracleLibrary.currentCumulativePrices(pair);

@@ -30,11 +30,11 @@
 | [x] | `contracts/UniswapV2Router02.sol` | 446 | #02 | 446 |
 | [x] | `contracts/examples/ExampleFlashSwap.sol` | 67 | #03 | 67 |
 | [x] | `contracts/examples/ExampleComputeLiquidityValue.sol` | 90 | #03 | 90 |
-| [ ] | `contracts/examples/ExampleSlidingWindowOracle.sol` | 125 | #04 | |
+| [x] | `contracts/examples/ExampleSlidingWindowOracle.sol` | 125 | #04 | 125 |
 | [x] | `contracts/examples/ExampleOracleSimple.sol` | 67 | #05 | 67 |
 | [x] | `contracts/examples/ExampleSwapToPrice.sol` | 77 | #05 | 77 |
-| [ ] | `contracts/libraries/UniswapV2LiquidityMathLibrary.sol` | 139 | #06 | |
-| [ ] | `contracts/libraries/SafeMath.sol` | 17 | #06 | |
+| [x] | `contracts/libraries/UniswapV2LiquidityMathLibrary.sol` | 139 | #06 | 139 |
+| [x] | `contracts/libraries/SafeMath.sol` | 17 | #06 | 17 |
 | [x] | `contracts/libraries/UniswapV2Library.sol` | 82 | #07 | 82 |
 | [x] | `contracts/libraries/UniswapV2OracleLibrary.sol` | 35 | #07 | 35 |
 | [x] | `contracts/test/DeflatingERC20.sol` | 97 | #08 | 97 |
@@ -48,7 +48,7 @@
 | [x] | `test/ExampleSwapToPrice.spec.ts` | 198 | #12 | 198 |
 | [x] | `test/ExampleFlashSwap.spec.ts` | 153 | #13 | 153 |
 | [x] | `test/UniswapV2Migrator.spec.ts` | 70 | #13 | 70 |
-| [ ] | `test/ExampleSlidingWindowOracle.spec.ts` | 294 | #14 | |
+| [x] | `test/ExampleSlidingWindowOracle.spec.ts` | 294 | #14 | 294 |
 | [x] | `test/UniswapV2Router01.spec.ts` | 734 | #15 | 734 |
 | [x] | `test/UniswapV2Router02.spec.ts` | 380 | #15 | 380 |
 | [x] | `test/shared/fixtures.ts` | 100 | #15 | 100 |
@@ -95,3 +95,6 @@
 - 子代理 #07 完成：contracts/libraries/UniswapV2Library.sol=82，contracts/libraries/UniswapV2OracleLibrary.sol=35
 - 子代理 #05 完成：contracts/examples/ExampleOracleSimple.sol=67，contracts/examples/ExampleSwapToPrice.sol=77
 - 子代理 #13 完成：test/ExampleFlashSwap.spec.ts=153，test/UniswapV2Migrator.spec.ts=70
+- 子代理 #14 完成：test/ExampleSlidingWindowOracle.spec.ts=294
+- 子代理 #04 完成：contracts/examples/ExampleSlidingWindowOracle.sol=125
+- 子代理 #06 完成：contracts/libraries/UniswapV2LiquidityMathLibrary.sol=139，contracts/libraries/SafeMath.sol=17
