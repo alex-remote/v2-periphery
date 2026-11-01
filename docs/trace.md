@@ -41,7 +41,7 @@
 | [x] | `contracts/test/ERC20.sol` | 94 | #08 | 94 |
 | [x] | `.github/stale.yml` | 25 | #08 | 25 |
 | [x] | `.github/workflows/CI.yml` | 38 | #08 | 38 |
-| [ ] | `contracts/test/WETH9.sol`（第 1–310 行） | 756 | #09 | |
+| [x] | `contracts/test/WETH9.sol`（第 1–310 行） | 756 | #09 | 756 |
 | [ ] | `contracts/test/WETH9.sol`（第 311–540 行） | 〃 | #10 | |
 | [ ] | `contracts/test/WETH9.sol`（第 541–756 行） | 〃 | #11 | |
 | [x] | `test/ExampleComputeLiquidityValue.spec.ts` | 454 | #12 | 454 |
@@ -98,3 +98,4 @@
 - 子代理 #14 完成：test/ExampleSlidingWindowOracle.spec.ts=294
 - 子代理 #04 完成：contracts/examples/ExampleSlidingWindowOracle.sol=125
 - 子代理 #06 完成：contracts/libraries/UniswapV2LiquidityMathLibrary.sol=139，contracts/libraries/SafeMath.sol=17
+- 子代理 #09 完成：contracts/test/WETH9.sol=756；第 1–14 行版权声明与第 81–310 行 GPL 正文已译，第 15–79 行合约代码与 HEAD 一致

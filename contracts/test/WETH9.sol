@@ -1,17 +1,17 @@
-// Copyright (C) 2015, 2016, 2017 Dapphub
+// 版权所有 (C) 2015, 2016, 2017 Dapphub
 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
+// 本程序是自由软件：您可以重新分发和/或修改它，
+// 但须遵守 GNU 通用公共许可证的条款，该许可证由
+// 自由软件基金会发布，可以是许可证的第 3 版，或者
+// （由您选择）任何更高的版本。
 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
+// 分发本程序是希望它能有用，
+// 但不提供任何担保；甚至不提供对
+// 适销性或特定用途适用性的默示担保。详情请参阅
+// GNU 通用公共许可证。
 
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+// 您应当已随本程序一起收到一份 GNU 通用公共许可证的
+// 副本。如果没有，请参阅 <http://www.gnu.org/licenses/>。
 
 pragma solidity =0.6.6;
 
@@ -78,236 +78,236 @@ contract WETH9 {
 
 
 /*
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+                    GNU 通用公共许可证
+                       第 3 版，2007 年 6 月 29 日
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
+ 版权所有 (C) 2007 自由软件基金会 <http://fsf.org/>
+ 任何人都可以复制和分发本许可证文档的
+ 逐字副本，但不允许对其进行修改。
 
-                            Preamble
+                            序言
 
-  The GNU General Public License is a free, copyleft license for
-software and other kinds of works.
+  GNU 通用公共许可证是一份适用于软件和其他类型作品的
+自由的、copyleft 的许可证。
 
-  The licenses for most software and other practical works are designed
-to take away your freedom to share and change the works.  By contrast,
-the GNU General Public License is intended to guarantee your freedom to
-share and change all versions of a program--to make sure it remains free
-software for all its users.  We, the Free Software Foundation, use the
-GNU General Public License for most of our software; it applies also to
-any other work released this way by its authors.  You can apply it to
-your programs, too.
+  大多数软件和其他实用作品的许可证，其设计目的
+是剥夺您分享和修改这些作品的自由。与之相反，
+GNU 通用公共许可证旨在保障您分享和修改
+一个程序所有版本的自由——确保它对所有用户而言
+始终是自由软件。我们，自由软件基金会，将
+GNU 通用公共许可证用于我们的大部分软件；它也适用于
+作者以这种方式发布的任何其他作品。您也可以将它
+应用于您的程序。
 
-  When we speak of free software, we are referring to freedom, not
-price.  Our General Public Licenses are designed to make sure that you
-have the freedom to distribute copies of free software (and charge for
-them if you wish), that you receive source code or can get it if you
-want it, that you can change the software or use pieces of it in new
-free programs, and that you know you can do these things.
+  当我们谈论自由软件时，我们指的是自由，而不是
+价格。我们的通用公共许可证旨在确保您
+拥有分发自由软件副本的自由（如果您愿意，还可以为此
+收费），确保您能收到源代码，或者在您需要时
+能够获得源代码，确保您可以修改软件或将其部分用于新的
+自由程序中，并确保您知道自己可以做这些事情。
 
-  To protect your rights, we need to prevent others from denying you
-these rights or asking you to surrender the rights.  Therefore, you have
-certain responsibilities if you distribute copies of the software, or if
-you modify it: responsibilities to respect the freedom of others.
+  为了保护您的权利，我们需要防止他人剥夺您的
+这些权利，或要求您放弃这些权利。因此，如果您
+分发该软件的副本，或者修改该软件，您就负有
+一定的责任：尊重他人自由的责任。
 
-  For example, if you distribute copies of such a program, whether
-gratis or for a fee, you must pass on to the recipients the same
-freedoms that you received.  You must make sure that they, too, receive
-or can get the source code.  And you must show them these terms so they
-know their rights.
+  例如，如果您分发此类程序的副本，无论是
+免费还是收费，您都必须将您所获得的同等自由
+传递给接收者。您必须确保他们同样能收到
+或获得源代码。您还必须向他们展示这些条款，使他们
+了解自己的权利。
 
-  Developers that use the GNU GPL protect your rights with two steps:
-(1) assert copyright on the software, and (2) offer you this License
-giving you legal permission to copy, distribute and/or modify it.
+  使用 GNU GPL 的开发者通过两个步骤来保护您的权利：
+(1) 主张对软件的版权；(2) 向您提供本许可证，
+给予您复制、分发和/或修改该软件的法律许可。
 
-  For the developers' and authors' protection, the GPL clearly explains
-that there is no warranty for this free software.  For both users' and
-authors' sake, the GPL requires that modified versions be marked as
-changed, so that their problems will not be attributed erroneously to
-authors of previous versions.
+  为了保护开发者和作者，GPL 明确说明
+本自由软件不提供任何担保。出于对用户和
+作者双方的考虑，GPL 要求修改后的版本必须标明
+已被修改，以免其问题被错误地归咎于
+先前版本的作者。
 
-  Some devices are designed to deny users access to install or run
-modified versions of the software inside them, although the manufacturer
-can do so.  This is fundamentally incompatible with the aim of
-protecting users' freedom to change the software.  The systematic
-pattern of such abuse occurs in the area of products for individuals to
-use, which is precisely where it is most unacceptable.  Therefore, we
-have designed this version of the GPL to prohibit the practice for those
-products.  If such problems arise substantially in other domains, we
-stand ready to extend this provision to those domains in future versions
-of the GPL, as needed to protect the freedom of users.
+  有些设备被设计为拒绝用户安装或运行其内部软件的
+修改版本，尽管制造商自己可以这样做。
+这与保护用户修改软件之自由的目标
+从根本上是不相容的。这种滥用的系统性
+模式出现在供个人使用的产品领域，
+而这恰恰是最不可接受的领域。因此，我们
+设计了此版本的 GPL，以禁止在这些产品上采取这种做法。
+如果此类问题在其他领域大量出现，我们
+随时准备在未来版本的 GPL 中将此条款扩展到这些领域，
+以便在需要时保护用户的自由。
 
-  Finally, every program is threatened constantly by software patents.
-States should not allow patents to restrict development and use of
-software on general-purpose computers, but in those that do, we wish to
-avoid the special danger that patents applied to a free program could
-make it effectively proprietary.  To prevent this, the GPL assures that
-patents cannot be used to render the program non-free.
+  最后，每个程序都不断受到软件专利的威胁。
+国家不应允许专利限制通用计算机上软件的
+开发和使用，但在那些允许这样做的国家，我们希望
+避免一种特殊的危险：应用于自由程序的专利可能
+使其实际上变成专有软件。为了防止这种情况，GPL 确保
+专利不能被用来使程序变得不自由。
 
-  The precise terms and conditions for copying, distribution and
-modification follow.
+  以下是有关复制、分发和
+修改的确切条款与条件。
 
-                       TERMS AND CONDITIONS
+                       条款与条件
 
-  0. Definitions.
+  0. 定义。
 
-  "This License" refers to version 3 of the GNU General Public License.
+  “本许可证”指 GNU 通用公共许可证第 3 版。
 
-  "Copyright" also means copyright-like laws that apply to other kinds of
-works, such as semiconductor masks.
+  “版权”也指适用于其他类型作品的类似版权的法律，
+例如适用于半导体掩模的法律。
 
-  "The Program" refers to any copyrightable work licensed under this
-License.  Each licensee is addressed as "you".  "Licensees" and
-"recipients" may be individuals or organizations.
+  “本程序”指依据本许可证授权的任何可受版权保护的
+作品。每个被许可人都被称为“您”。“被许可人”和
+“接收者”可以是个人，也可以是组织。
 
-  To "modify" a work means to copy from or adapt all or part of the work
-in a fashion requiring copyright permission, other than the making of an
-exact copy.  The resulting work is called a "modified version" of the
-earlier work or a work "based on" the earlier work.
+  “修改”一个作品，是指以需要获得版权许可的方式复制或改编
+该作品的全部或部分，但制作完全相同的副本
+除外。由此产生的作品被称为先前作品的“修改版本”，
+或“基于”先前作品的作品。
 
-  A "covered work" means either the unmodified Program or a work based
-on the Program.
+  “受保护作品”是指未经修改的本程序，或基于
+本程序的作品。
 
-  To "propagate" a work means to do anything with it that, without
-permission, would make you directly or secondarily liable for
-infringement under applicable copyright law, except executing it on a
-computer or modifying a private copy.  Propagation includes copying,
-distribution (with or without modification), making available to the
-public, and in some countries other activities as well.
+  “传播”一个作品，是指对其进行的任何未经
+许可便会使您根据适用的版权法承担直接或间接
+侵权责任的行为，但在计算机上执行该作品
+或修改私人副本除外。传播包括复制、
+分发（无论是否经过修改）、向公众提供，
+在某些国家还包括其他活动。
 
-  To "convey" a work means any kind of propagation that enables other
-parties to make or receive copies.  Mere interaction with a user through
-a computer network, with no transfer of a copy, is not conveying.
+  “传递”一个作品，是指任何使其他方能够制作或接收副本的
+传播行为。仅通过计算机网络与用户进行交互，
+而没有转移副本，不属于传递。
 
-  An interactive user interface displays "Appropriate Legal Notices"
-to the extent that it includes a convenient and prominently visible
-feature that (1) displays an appropriate copyright notice, and (2)
-tells the user that there is no warranty for the work (except to the
-extent that warranties are provided), that licensees may convey the
-work under this License, and how to view a copy of this License.  If
-the interface presents a list of user commands or options, such as a
-menu, a prominent item in the list meets this criterion.
+  交互式用户界面在以下范围内即被视为显示了“适当的法律声明”：
+该界面包含一个便利且显著可见的
+功能，该功能 (1) 显示适当的版权声明，并且 (2)
+告知用户该作品不提供担保（已提供担保的
+情况除外）、被许可人可以依据本许可证传递该
+作品，以及如何查看本许可证的副本。如果
+该界面提供用户命令或选项的列表（例如
+菜单），则列表中的一个显著条目即满足此标准。
 
-  1. Source Code.
+  1. 源代码。
 
-  The "source code" for a work means the preferred form of the work
-for making modifications to it.  "Object code" means any non-source
-form of a work.
+  作品的“源代码”是指对该作品进行修改时
+所首选的作品形式。“目标代码”是指作品的任何非源代码
+形式。
 
-  A "Standard Interface" means an interface that either is an official
-standard defined by a recognized standards body, or, in the case of
-interfaces specified for a particular programming language, one that
-is widely used among developers working in that language.
+  “标准接口”是指这样一种接口：它或者是由公认的
+标准机构定义的官方标准，或者在针对
+特定编程语言规定的接口的情况下，是在使用
+该语言的开发者中被广泛使用的接口。
 
-  The "System Libraries" of an executable work include anything, other
-than the work as a whole, that (a) is included in the normal form of
-packaging a Major Component, but which is not part of that Major
-Component, and (b) serves only to enable use of the work with that
-Major Component, or to implement a Standard Interface for which an
-implementation is available to the public in source code form.  A
-"Major Component", in this context, means a major essential component
-(kernel, window system, and so on) of the specific operating system
-(if any) on which the executable work runs, or a compiler used to
-produce the work, or an object code interpreter used to run it.
+  可执行作品的“系统库”包括除该作品整体之外，
+满足以下条件的任何内容：(a) 包含在打包
+某个主要组件的常规形式中，但不属于该主要
+组件的一部分；并且 (b) 仅用于使该作品能够与该
+主要组件一起使用，或用于实现某个标准接口，且该接口的
+实现已以源代码形式向公众提供。在此语境下，
+“主要组件”是指该可执行作品所运行的特定操作系统
+（如果有的话）的主要基本组件（内核、窗口系统等），
+或用于生成该作品的编译器，
+或用于运行该作品的目标代码解释器。
 
-  The "Corresponding Source" for a work in object code form means all
-the source code needed to generate, install, and (for an executable
-work) run the object code and to modify the work, including scripts to
-control those activities.  However, it does not include the work's
-System Libraries, or general-purpose tools or generally available free
-programs which are used unmodified in performing those activities but
-which are not part of the work.  For example, Corresponding Source
-includes interface definition files associated with source files for
-the work, and the source code for shared libraries and dynamically
-linked subprograms that the work is specifically designed to require,
-such as by intimate data communication or control flow between those
-subprograms and other parts of the work.
+  目标代码形式的作品的“对应源代码”是指
+生成、安装以及（对于可执行作品）运行该目标代码，
+以及修改该作品所需的全部源代码，包括用于
+控制这些活动的脚本。但是，它不包括该作品的
+系统库，也不包括在执行这些活动时未经修改而使用、
+但并非该作品一部分的通用工具或普遍可获得的自由
+程序。例如，对应源代码
+包括与该作品源文件相关联的接口定义文件，
+以及该作品经专门设计而需要的共享库和动态
+链接子程序的源代码，例如这些子程序与
+该作品其他部分之间存在密切的数据通信或
+控制流的情形。
 
-  The Corresponding Source need not include anything that users
-can regenerate automatically from other parts of the Corresponding
-Source.
+  对应源代码无需包含用户
+可以从对应源代码的其他部分自动重新生成的
+任何内容。
 
-  The Corresponding Source for a work in source code form is that
-same work.
+  源代码形式的作品的对应源代码就是
+该作品本身。
 
-  2. Basic Permissions.
+  2. 基本许可。
 
-  All rights granted under this License are granted for the term of
-copyright on the Program, and are irrevocable provided the stated
-conditions are met.  This License explicitly affirms your unlimited
-permission to run the unmodified Program.  The output from running a
-covered work is covered by this License only if the output, given its
-content, constitutes a covered work.  This License acknowledges your
-rights of fair use or other equivalent, as provided by copyright law.
+  依据本许可证授予的所有权利，其授予期限为本程序的
+版权期限，并且只要满足所述
+条件即不可撤销。本许可证明确确认您拥有不受限制地
+运行未经修改的本程序的许可。运行
+受保护作品所产生的输出，仅当该输出就其
+内容而言构成受保护作品时，才受本许可证保护。本许可证承认您
+享有版权法所规定的合理使用权或其他同等权利。
 
-  You may make, run and propagate covered works that you do not
-convey, without conditions so long as your license otherwise remains
-in force.  You may convey covered works to others for the sole purpose
-of having them make modifications exclusively for you, or provide you
-with facilities for running those works, provided that you comply with
-the terms of this License in conveying all material for which you do
-not control copyright.  Those thus making or running the covered works
-for you must do so exclusively on your behalf, under your direction
-and control, on terms that prohibit them from making any copies of
-your copyrighted material outside their relationship with you.
+  您可以制作、运行和传播您不传递的受保护作品，
+只要您的许可在其他方面仍然有效，便无需任何条件。
+您可以将受保护作品传递给他人，其唯一目的
+是让他们专门为您进行修改，或为您提供
+运行这些作品的设施，前提是您在传递所有您
+不控制其版权的材料时遵守本许可证的
+条款。如此为您制作或运行受保护作品的人，
+必须完全代表您、在您的指示
+和控制下进行，且所依据的条款须禁止他们在与您的关系之外
+制作您享有版权的材料的任何副本。
 
-  Conveying under any other circumstances is permitted solely under
-the conditions stated below.  Sublicensing is not allowed; section 10
-makes it unnecessary.
+  在任何其他情况下进行传递，仅在满足
+下文所述条件时才被允许。不允许再许可；第 10 节
+使再许可变得没有必要。
 
-  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+  3. 保护用户的合法权利免受反规避法的影响。
 
-  No covered work shall be deemed part of an effective technological
-measure under any applicable law fulfilling obligations under article
-11 of the WIPO copyright treaty adopted on 20 December 1996, or
-similar laws prohibiting or restricting circumvention of such
-measures.
+  任何受保护作品均不得依据以下法律被视为有效技术
+措施的一部分：为履行 1996 年 12 月 20 日通过的
+WIPO 版权条约第 11 条规定之义务而制定的任何适用法律，或
+禁止或限制规避此类
+措施的类似法律。
 
-  When you convey a covered work, you waive any legal power to forbid
-circumvention of technological measures to the extent such circumvention
-is effected by exercising rights under this License with respect to
-the covered work, and you disclaim any intention to limit operation or
-modification of the work as a means of enforcing, against the work's
-users, your or third parties' legal rights to forbid circumvention of
-technological measures.
+  当您传递受保护作品时，您即放弃禁止
+规避技术措施的任何法律权力，只要这种规避
+是通过行使本许可证就该受保护作品所授予的权利
+而实现的；并且您声明放弃任何以限制该作品的运行或
+修改为手段，针对该作品的
+用户强制执行您或第三方禁止规避
+技术措施之合法权利的意图。
 
-  4. Conveying Verbatim Copies.
+  4. 传递逐字副本。
 
-  You may convey verbatim copies of the Program's source code as you
-receive it, in any medium, provided that you conspicuously and
-appropriately publish on each copy an appropriate copyright notice;
-keep intact all notices stating that this License and any
-non-permissive terms added in accord with section 7 apply to the code;
-keep intact all notices of the absence of any warranty; and give all
-recipients a copy of this License along with the Program.
+  您可以通过任何介质，传递您所收到的本程序源代码的
+逐字副本，前提是您在每份副本上显著且
+适当地发布适当的版权声明；
+完整保留所有声明本许可证以及
+依据第 7 节添加的任何非许可性条款适用于该代码的声明；
+完整保留所有关于不提供任何担保的声明；并随本程序向所有
+接收者提供一份本许可证的副本。
 
-  You may charge any price or no price for each copy that you convey,
-and you may offer support or warranty protection for a fee.
+  您可以对您传递的每份副本收取任何价格或不收取费用，
+并且您可以有偿提供支持或担保保护。
 
-  5. Conveying Modified Source Versions.
+  5. 传递修改后的源代码版本。
 
-  You may convey a work based on the Program, or the modifications to
-produce it from the Program, in the form of source code under the
-terms of section 4, provided that you also meet all of these conditions:
+  您可以传递基于本程序的作品，或从本程序产生该作品所做的
+修改，以源代码形式并依据
+第 4 节的条款进行传递，前提是您同时满足以下所有条件：
 
-    a) The work must carry prominent notices stating that you modified
-    it, and giving a relevant date.
+    a) 该作品必须带有显著的声明，说明您修改了
+    它，并注明相关日期。
 
-    b) The work must carry prominent notices stating that it is
-    released under this License and any conditions added under section
-    7.  This requirement modifies the requirement in section 4 to
-    "keep intact all notices".
+    b) 该作品必须带有显著的声明，说明它是
+    依据本许可证以及依据第
+    7 节所添加的任何条件发布的。此要求修改了第 4 节中关于
+    “完整保留所有声明”的要求。
 
-    c) You must license the entire work, as a whole, under this
-    License to anyone who comes into possession of a copy.  This
-    License will therefore apply, along with any applicable section 7
-    additional terms, to the whole of the work, and all its parts,
-    regardless of how they are packaged.  This License gives no
-    permission to license the work in any other way, but it does not
-    invalidate such permission if you have separately received it.
+    c) 您必须依据本许可证，将整个作品作为一个整体，
+    授权给任何获得其副本的人。因此，本
+    许可证连同任何适用的第 7 节
+    附加条款，将适用于整个作品及其所有部分，
+    无论它们以何种方式打包。本许可证不给予
+    以任何其他方式授权该作品的许可，但它并不
+    使您另行获得的此类许可失效。
 
-    d) If the work has interactive user interfaces, each must display
+    d) 如果该作品具有交互式用户界面，则每个界面都必须显示
     Appropriate Legal Notices; however, if the Program has interactive
     interfaces that do not display Appropriate Legal Notices, your
     work need not make them do so.
