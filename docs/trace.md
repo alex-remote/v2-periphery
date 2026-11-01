@@ -42,7 +42,7 @@
 | [x] | `.github/stale.yml` | 25 | #08 | 25 |
 | [x] | `.github/workflows/CI.yml` | 38 | #08 | 38 |
 | [x] | `contracts/test/WETH9.sol`（第 1–310 行） | 756 | #09 | 756 |
-| [ ] | `contracts/test/WETH9.sol`（第 311–540 行） | 〃 | #10 | |
+| [x] | `contracts/test/WETH9.sol`（第 311–540 行） | 〃 | #10 | 756 |
 | [x] | `contracts/test/WETH9.sol`（第 541–756 行） | 〃 | #11 | 756 |
 | [x] | `test/ExampleComputeLiquidityValue.spec.ts` | 454 | #12 | 454 |
 | [x] | `test/ExampleSwapToPrice.spec.ts` | 198 | #12 | 198 |
@@ -100,3 +100,26 @@
 - 子代理 #06 完成：contracts/libraries/UniswapV2LiquidityMathLibrary.sol=139，contracts/libraries/SafeMath.sol=17
 - 子代理 #09 完成：contracts/test/WETH9.sol=756；第 1–14 行版权声明与第 81–310 行 GPL 正文已译，第 15–79 行合约代码与 HEAD 一致
 - 子代理 #11 完成：contracts/test/WETH9.sol=756；第 541–755 行 GPL 正文已译，第 756 行 `*/` 保持，末尾无换行
+- 子代理 #10 完成：contracts/test/WETH9.sol=756；第 311–540 行 GPL 正文已译；三段已统一中文引号“…”、“第 N 节”格式与“前权益人”等术语
+- 2026-11-01：全部 29 个任务项完成。主代理对照 `master` 做了整体校验：22 个改动的源码/配置文件行数与末尾换行状态全部一致；所有改动行中注释符号前的代码一字未改，WETH9.sol 的改动只在注释区间内；原 `README.md` 两份均未改动，`_zh.md` 与原件行数一致；校验问题数为 0。
+
+## 完成汇总
+
+| 项目 | 结果 |
+| --- | --- |
+| 已完成任务项 | 29 / 29 |
+| 实际改动的源码 / 配置文件 | 22 个（逐行对照共改动 772 行注释，其中 WETH9.sol 563 行；总行数不变） |
+| 新增中文 Markdown | 2 个（`README_zh.md`、`contracts/examples/README_zh.md`） |
+| 核对后无需改动 | `contracts/test/ERC20.sol`、`contracts/test/DeflatingERC20.sol`（仅含 `keccak256("Permit(...)")` 代码片段注释）、`.github/workflows/CI.yml`（仅含 `# v1` 版本标注） |
+
+### 有意保留原文的内容
+
+- 纯数学表达式、方向标记、时间戳类注释，例如 `test/ExampleSwapToPrice.spec.ts` 第 121/146/171 行、`test/UniswapV2Router02.spec.ts` 第 252/268/289 行（`WETH -> DTT` 等）、`test/ExampleSlidingWindowOracle.spec.ts` 第 68 行。
+- `contracts/libraries/UniswapV2LiquidityMathLibrary.sol` 第 99 行只有函数引用 `#getLiquidityValueAfterArbitrageToPrice`。
+- `contracts/test/WETH9.sol` 第 714 行的 GPL 附录占位符 `<one line to give the program's name ...>`，以及第 31–33 行被注释掉的代码。
+- `.github/stale.yml` 中 `markComment` 的多行文本是 YAML 配置值，不是注释，未翻译。
+
+### 原注释与代码不一致之处（按原文翻译，未修正）
+
+- `test/UniswapV2Router02.spec.ts` 第 331 行注释写的是“创建一个 DTT<>WETH pair”，下面的代码实际创建的是 DTT<>DTT2 pair。
+- `test/ExampleSlidingWindowOracle.spec.ts` 第 282–283 行注释是从第 268–269 行复制来的（写的是第 23 小时），但所在测试是 hour 32。
